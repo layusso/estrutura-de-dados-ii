@@ -1,0 +1,15 @@
+A estrutura geral do algoritmo de Morris está presente:
+
+Esse código implementa o algoritmo de Morris para percorrer uma árvore binária em pré-ordem sem usar pilha e sem recursão, de forma eficiente em termos de espaço.
+
+O algoritmo começa definindo um ponteiro p que aponta para a raiz da árvore e um ponteiro temporário tmp. Em cada iteração do laço while, o algoritmo processa o nó apontado por p.
+
+Se p não tem filho esquerdo (p->left == 0), o nó é visitado (usando a função visit()) e o algoritmo segue para o filho direito (p->right), se houver.
+
+Se p tem filho esquerdo (p->left != 0), o algoritmo precisa percorrer a subárvore esquerda. Para isso, ele encontra o nó mais à direita na subárvore esquerda de p, ou seja, o nó tmp cujo tmp->right == 0 e que está no caminho da raiz até p.
+
+Se tmp->right == 0, isso significa que o nó p é visitado (usando a função visit()), o ponteiro tmp->right é definido para apontar para p (para indicar que a subárvore esquerda de p foi completamente percorrida) e o algoritmo segue para o filho esquerdo (p->left).
+
+Se tmp->right == p, isso significa que a subárvore esquerda de p já foi completamente percorrida. Nesse caso, o ponteiro tmp->right é definido para 0 (para restaurar a árvore original) e o algoritmo segue para o filho direito (p->right).
+
+O algoritmo continua até que o ponteiro p seja 0, indicando que a árvore foi completamente percorrida. 
