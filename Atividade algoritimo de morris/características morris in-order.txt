@@ -1,0 +1,9 @@
+Algoritmo percorre todos os nós da árvore uma única vez, realizando operações em cada um deles. Portanto, o tempo de execução é proporcional ao número de nós da árvore (n), resultando em uma complexidade de tempo linear.
+
+Percurso in-ordem: O algoritmo realiza um percurso in-ordem na árvore binária, ou seja, visita os nós na seguinte ordem: esquerda, nó atual, direita. Isso garante que os nós sejam visitados em ordem crescente quando aplicado a uma árvore de busca binária.
+
+Uso de ponteiros "right": O algoritmo utiliza ponteiros "right" nos nós para estabelecer conexões temporárias entre nós predecessores e sucessores durante o percurso. Esses ponteiros são modificados dinamicamente conforme o algoritmo progride.
+
+Não utiliza recursão ou pilha: Ao contrário de outros métodos de percurso in-ordem, o algoritmo de Morris não faz uso de recursão ou de uma pilha explícita para armazenar os nós a serem visitados. Isso contribui para a economia de espaço.
+
+Preserva a estrutura original da árvore: Durante o percurso, o algoritmo não modifica a estrutura original da árvore. Os ponteiros "right" são utilizados temporariamente e restaurados ao seu estado original após a visita do nó.
